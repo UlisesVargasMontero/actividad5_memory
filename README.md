@@ -15,3 +15,4 @@ Juego de memoria: hay que encontrar los pares iguales destapando dos cuadros a l
 - Se corrigió el estilo del código para centrar el dígito (Edgar).
 - Se agregaron símbolos en lugar de números para mejorar la memoria (Ulises).
 - Se duplican los símbolos (Ulises).
+- Se ajustó el centrado vertical del símbolo en el cuadro (Edgar).

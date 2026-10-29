@@ -93,7 +93,7 @@ def draw():
         color('black')
 
         # Centrar el dígito en el cuadro.
-        goto(x + 25, y + 10)
+        goto(x + 25, y + 2)
         write(
             tiles[mark],
             align='center',
