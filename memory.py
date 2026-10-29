@@ -78,12 +78,20 @@ def draw():
 
     mark = state['mark']
 
+    #Centrar digitos en los cuadros del juego
+
     if mark is not None and hide[mark]:
-        x, y = xy(mark)
-        up()
-        goto(x + 2, y)
-        color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+    x, y = xy(mark)
+    up()
+    color('black')
+
+    # Centrar el dígito en el cuadro.
+    goto(x + 25, y + 10)
+    write(
+        tiles[mark],
+        align='center',
+        font=('Arial', 30, 'normal')
+    )
 
     update()
     ontimer(draw, 100)
