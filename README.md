@@ -2,4 +2,4 @@
 Original de Memory.py
 
 - Añade símbolos  para mejorar memoria
-
+- Duplica símbolos
