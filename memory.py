@@ -59,6 +59,10 @@ def tap(x, y):
         hide[mark] = False
         state['mark'] = None
 
+    # Si ya no queda ningun cuadrado, el jugador gana.
+    if True not in hide:
+        title(' Ganaste :D Taps: ' + str(state['taps']))
+
 
 def draw():
     """Draw image and tiles."""
