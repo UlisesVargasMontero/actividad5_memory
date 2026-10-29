@@ -15,7 +15,14 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+# Símbolos que se usan en lugar de números para formar los pares.
+symbols = [
+    '★', '☆', '♥', '♡', '♦', '♢', '♣', '♧',
+    '♠', '♤', '●', '○', '■', '□', '▲', '△',
+    '▼', '▽', '◆', '◇', '☀', '☂', '☎', '☕',
+    '♪', '♫', '⚽', '⚓', '✈', '☘', '☯', '☮'
+]
+tiles = symbols * 2
 # Guarda la casilla marcada y cuantos clics lleva el jugador.
 state = {'mark': None, 'taps': 0}
 hide = [True] * 64
