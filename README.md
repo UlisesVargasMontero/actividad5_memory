@@ -12,3 +12,4 @@ Juego de memoria: hay que encontrar los pares iguales destapando dos cuadros a l
 - Se cuenta y se muestra el número de taps en la barra de la ventana (Edgar).
 - Se detecta cuando se destaparon todos los cuadros y se muestra un mensaje de victoria (Edgar).
 - Se centra el dígito en el cuadro (Ulises).
+_ Se corrigió el estilo del código para centrar el dígito (Edgar).
