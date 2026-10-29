@@ -15,6 +15,13 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
+#Symbols
+symbols = [
+    '★', '☆', '♥', '♡', '♦', '♢', '♣', '♧',
+    '♠', '♤', '●', '○', '■', '□', '▲', '△',
+    '▼', '▽', '◆', '◇', '☀', '☂', '☎', '☕',
+    '♪', '♫', '⚽', '⚓', '✈', '☘', '☯', '☮'
+]
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
