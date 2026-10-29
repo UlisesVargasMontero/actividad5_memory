@@ -22,7 +22,7 @@ symbols = [
     '▼', '▽', '◆', '◇', '☀', '☂', '☎', '☕',
     '♪', '♫', '⚽', '⚓', '✈', '☘', '☯', '☮'
 ]
-tiles = list(range(32)) * 2
+tiles = symbols * 2
 state = {'mark': None}
 hide = [True] * 64
 
