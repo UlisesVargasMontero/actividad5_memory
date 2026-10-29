@@ -15,7 +15,7 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-#Symbols
+# Símbolos que se usan en lugar de números para formar los pares.
 symbols = [
     '★', '☆', '♥', '♡', '♦', '♢', '♣', '♧',
     '♠', '♤', '●', '○', '■', '□', '▲', '△',
@@ -23,7 +23,8 @@ symbols = [
     '♪', '♫', '⚽', '⚓', '✈', '☘', '☯', '☮'
 ]
 tiles = symbols * 2
-state = {'mark': None}
+# Guarda la casilla marcada y cuantos clics lleva el jugador.
+state = {'mark': None, 'taps': 0}
 hide = [True] * 64
 
 
@@ -52,6 +53,9 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    # Cuenta cada click y se muestra en la barra de la ventana.
+    state['taps'] += 1
+    title('Taps: ' + str(state['taps']))
     spot = index(x, y)
     mark = state['mark']
 
@@ -61,6 +65,10 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+
+    # Si ya no queda ningun cuadrado, el jugador gana.
+    if True not in hide:
+        title(' Ganaste :D Taps: ' + str(state['taps']))
 
 
 def draw():
@@ -77,12 +85,20 @@ def draw():
 
     mark = state['mark']
 
+    # Centrar digitos en los cuadros del juego
+
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+
+        # Centrar el dígito en el cuadro.
+        goto(x + 25, y + 10)
+        write(
+            tiles[mark],
+            align='center',
+            font=('Arial', 30, 'normal')
+        )
 
     update()
     ontimer(draw, 100)
