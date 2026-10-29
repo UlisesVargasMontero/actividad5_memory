@@ -16,7 +16,8 @@ from freegames import path
 
 car = path('car.gif')
 tiles = list(range(32)) * 2
-state = {'mark': None}
+# Guarda la casilla marcada y cuantos clics lleva el jugador.
+state = {'mark': None, 'taps': 0}
 hide = [True] * 64
 
 
@@ -45,6 +46,9 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    # Cuenta cada click y se muestra en la barra de la ventana.
+    state['taps'] += 1
+    title('Taps: ' + str(state['taps']))
     spot = index(x, y)
     mark = state['mark']
 
@@ -54,6 +58,10 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+
+    # Si ya no queda ningun cuadrado, el jugador gana.
+    if True not in hide:
+        title(' Ganaste :D Taps: ' + str(state['taps']))
 
 
 def draw():
